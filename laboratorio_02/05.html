@@ -26,6 +26,7 @@
     let custoTotal;
     let precoQuarto;
     let descontoNoites;
+    let erro = 0
 
     if (tipoQuarto == "Simples" || tipoQuarto == "simples") {
         precoQuarto = 150
@@ -34,7 +35,7 @@
     } else if (tipoQuarto == "Suíte" || tipoQuarto == "suíte" || tipoQuarto == "Suite" || tipoQuarto == "suite") {
         precoQuarto = 400
     } else {
-        document.write(`Tipo de quarto inexistente!`);
+        erro = 1;
     };
 
     if (noites >= 5 && noites <= 9) {
@@ -48,6 +49,10 @@
     custoTotal = precoQuarto - ((precoQuarto * descontoNoites) / 100);
 
     //SAÍDA
-    document.write(`O preço total da sua estadia será de R$ ${custoTotal}!`);
+    if (erro = 1) {
+        document.write(`Tipo de quarto inexistente!`)
+    } else {
+        document.write(`O preço total da sua estadia será de R$ ${custoTotal}!`)
+    };
 
 </script>
