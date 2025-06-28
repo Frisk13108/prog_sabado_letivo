@@ -28,11 +28,37 @@
     */
 
     //ENTRADA
-
+    let salarioAtual = Number(prompt(`Informe seu sálario atual`));
+    const casaAnos = Number(prompt(`Informe quanto tempo de casa você tem (em anos)`));
+    const notaDesempenho = Number(prompt(`Informe sua nota de desempenho (de 0 a 10)`));
 
     //PROCESSAMENTO
+    let bonusCasa;
+    let bonusDesempenho;
+    let bonusTotal;
 
+    if (casaAnos < 1) {
+        bonusCasa = salarioAtual;
+    } else if (casaAnos >= 1 && casaAnos <= 5) {
+        bonusCasa = (salarioAtual * 5) / 100;
+    } else {
+        bonusCasa = (salarioAtual * 10) / 100;
+    }
+
+    if (notaDesempenho < 7) {
+        bonusDesempenho = salarioAtual
+    } else if (notaDesempenho >= 7 && notaDesempenho <= 8.9) {
+        bonusDesempenho = (salarioAtual * 5) / 100
+    } else if (notaDesempenho >= 9 && notaDesempenho <= 10) {
+        bonusDesempenho = (salarioAtual * 10) / 100
+    } else {
+        alert("Nota inválida!");
+    }
+
+    bonusTotal = bonusCasa + bonusDesempenho;
+    salarioAtual = salarioAtual + bonusTotal;
 
     //SAÍDA
+    document.write(`Sua bonificação total é de R$ ${salarioAtual}`)
     
 </script>

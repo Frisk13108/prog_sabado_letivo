@@ -19,9 +19,23 @@
     */
 
     //ENTRADA
+    const idade = Number(prompt(`Informe sua idade`));
 
 
     //PROCESSAMENTO
+    if (idade <=0 || isNaN(idade)) {
+        document.write(`Idade Inválida`)
+    } else if (idade <= 8) {
+        document.write(`Atleta pertence à categoria: Infantil A`);
+    } else if (idade <= 11) {
+        document.write(`Atleta pertence à categoria: Infantil B`);
+    } else if (idade <= 13) {
+        document.write(`Atleta pertence à categoria: Juvenil A`);
+    } else if (idade <= 17) {
+        document.write(`Atleta pertence à categoria: Juvenil B`);
+    } else {
+        document.write(`Adulto`)
+    }
 
 
     //SAÍDA

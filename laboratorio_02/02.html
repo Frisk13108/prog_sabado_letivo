@@ -24,11 +24,32 @@
     */
 
     //ENTRADA
+    let peso = Number(prompt(`Diga o peso do produto em quilogramas`));
+    let regiao = prompt(`A entrega é local, regional ou nacional?`);
 
 
     //PROCESSAMENTO
+    let custo = 5;
+    let custoPeso = (peso * 2);
+    let custoTotal;
+    let taxaRegiao
 
+    if (regiao === `local`) {
+        taxaRegiao = 2.00;
+    } else if (regiao === `regional`) {
+        taxaRegiao = 5.00;
+    } else {
+        taxaRegiao = 10.00;
+    }
+
+    custoTotal = (custoPeso + taxaRegiao + custo);
+    if (peso >= 10) {
+        custoTotal = (custoTotal - 3)
+    } else {
+        custoTotal = (custoTotal - 0)
+    }
 
     //SAÍDA
+    document.write(`O custo total do envio é de R$ ${custoTotal}`);
     
 </script>

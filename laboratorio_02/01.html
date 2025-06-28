@@ -19,10 +19,20 @@
     */
 
     //ENTRADA
+    const idade = Number(prompt(`Quantos anos você tem?`));
+    const rendaMensal = Number(prompt(`Qual é a sua renda mensal (em reais)?`));
+    const nome = prompt(`Você tem nome sujo?`);
 
 
     //PROCESSAMENTO
+    let mensagem = "";
 
+    if (idade >= 18 && rendaMensal > 2500 && nome == "nao") 
+    {document.write(`Crédito APROVADO!`);} 
+    else
+    {document.write(`Crédito REPROVADO!`);}
+
+    
 
     //SAÍDA
     
