@@ -18,11 +18,36 @@
     */
 
     //ENTRADA
+    let tipoQuarto = prompt(`Qual tipo de quarto você gostaria de se hospedar? (Simples, Duplo ou Suíte)`);
+    let noites = Number(prompt(`Quantas noites você gostaria de se hospedar?`));
 
 
     //PROCESSAMENTO
+    let custoTotal;
+    let precoQuarto;
+    let descontoNoites;
 
+    if (tipoQuarto == "Simples" || tipoQuarto == "simples") {
+        precoQuarto = 150
+    } else if (tipoQuarto == "Duplo" || tipoQuarto == "duplo") {
+        precoQuarto = 250
+    } else if (tipoQuarto == "Suíte" || tipoQuarto == "suíte" || tipoQuarto == "Suite" || tipoQuarto == "suite") {
+        precoQuarto = 400
+    } else {
+        document.write(`Tipo de quarto inexistente!`);
+    };
+
+    if (noites >= 5 && noites <= 9) {
+        descontoNoites = 10
+    } else if (noites >= 10) {
+        descontoNoites = 15
+    } else {
+        descontoNoites = 0
+    };
+
+    custoTotal = precoQuarto - ((precoQuarto * descontoNoites) / 100);
 
     //SAÍDA
+    document.write(`O preço total da sua estadia será de R$ ${custoTotal}!`);
 
 </script>
